@@ -22,6 +22,7 @@
   "homepage": "https://github.com/kishore-maria/cas-assessment-nodejs#readme",
   "dependencies": {
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
     "nodemon": "^3.0.3"
   }
 }
