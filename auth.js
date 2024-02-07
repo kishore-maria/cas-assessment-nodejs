@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const user = require("./userDetails");
 const secretKey = "Cas-assessment";
 
 const auth = async (req, res, next) => {
@@ -8,8 +7,8 @@ const auth = async (req, res, next) => {
   }
   const token = req.header("Authorization").replace("Bearer ", "");
   const data = jwt.verify(token, secretKey);
-  if (data.id === user.id && data.userName === user.userName) {
-    req.user = user;
+  if (data) {
+    req.user = data;
     req.token = token;
     next();
     return;
